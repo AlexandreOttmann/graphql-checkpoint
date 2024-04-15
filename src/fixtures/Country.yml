@@ -1,0 +1,8 @@
+entity: Country
+items: 
+  country{1..5}:
+    name: '{{location.country}}'
+    code: '{{location.countryCode}}'
+    continent: '{{location.timeZone}}'
+    emoji: '{{internet.emoji}}'
+    # Aucune idée de comment trouver l'emoji pays sur faker

@@ -1,26 +1,30 @@
 {
   "name": "exo-checkpoint2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "start": "ts-node-dev --transpile-only --watch ./src ./src/index.ts",
+    "fixtures": "fixtures-ts-node-commonjs",
+    "loadFixtures": "fixtures-ts-node-esm load ./src/fixtures --dataSource=./src/lib/datasource.ts --sync"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "type": "module",
   "dependencies": {
     "@apollo/server": "^4.10.2",
+    "class-validator": "^0.14.1",
     "graphql-scalars": "^1.23.0",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
-    "ts-node-dev": "^2.0.0",
-    "type-graphql": "^2.0.0-beta.6"
+    "type-graphql": "^2.0.0-beta.6",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
+    "ts-node-dev": "^2.0.0",
+    "typeorm-fixtures-cli": "^4.0.0",
     "typescript": "^5.4.5"
   }
 }
